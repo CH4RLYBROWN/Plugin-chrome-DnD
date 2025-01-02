@@ -1,0 +1,170 @@
+.left-column {
+  position: absolute;
+  width: 15vh;
+  height: auto; 
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background-color: rgba(20, 18, 18, 0.9);
+}
+
+.div-player {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  background-position: center;
+  background-size: cover;
+}
+
+.dice-table {
+  width: 100%;
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 3px;
+}
+
+.dice-table-item {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  color: aliceblue;
+  font-weight: bold;
+  grid-auto-flow: dense;
+  background-color: #353535;
+  border-radius: 2%;
+}
+
+.dice-fa {
+  font-size: 1.4rem;
+}
+
+.rolling-public {
+  background-color: rgba(245, 245, 245, 0.9);
+  color: #000;
+}
+
+.rolling-private{
+  background-color: rgba(14, 13, 13, 0.9);
+  color: white;
+}
+
+.avantage-button {
+  height: 5vh;
+  padding: 0px 3px;
+  border-radius: 2%;
+}
+.normal-color {
+  background-color: rgba(77, 77, 77, 0.9);
+}
+.avantage-color {
+  background-color: hsla(120, 27%, 18%, 0.9);
+}
+.desavantage-color {
+  background-color: rgba(68, 38, 38, 0.9);
+}
+
+.dice-roll-input {
+  width: 100%;
+  background-color: rgba(238, 238, 238, 0.904);
+  height: 4vh;
+  color: #000;
+}
+
+.ability-dice-table {
+  width: 100%;
+  height: 15vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  padding: 3px;
+}
+
+.ability-table-item {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  color: aliceblue;
+  font-weight: bold;
+  grid-auto-flow: dense;
+  background-color: #353535;
+  border-radius: 2%;
+}
+
+.section-player {
+  position: absolute;
+  width: 0vh;
+  height: 15vh; 
+  z-index: 10;
+  bottom: 0;
+  background-color: rgba(20, 18, 18, 0.9);
+}
+
+.players-icon-ctn {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  padding: 3px;
+}
+
+.players {
+  background-color: aliceblue;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.hp-mate {
+  width: 7.4vh;
+  height: 20%;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #000000c0;
+  align-self: self-end;
+  font-weight: bold;
+  text-align: center;
+}
+
+.inventory-ctn {
+  width: 100%;
+  height: 40vh;
+  background-color: #0f0f0fe8;
+}
+
+.inventory-btn {
+  width: 49%;
+}
+
+.quantity-label {
+  width: 49%;
+}
+
+.inputs-update-ctn {
+  color: white;
+  height: 90%;
+  flex-direction: column;
+  display: none;
+}
+
+.update-invt-title{
+  width: 96%;
+}
+
+.update-invt-number {
+  width: 48%;
+}
+
+.update-invt-description {
+  width: 96%;
+  height: 7rem;
+}
+
+.inputs-update-validate {
+  width: 100%;
+  margin-top: auto;
+}

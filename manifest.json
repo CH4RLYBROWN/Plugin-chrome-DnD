@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Dnd extension",
+  "description": "Extension pour dnd 5e",
+  "version": "1.0",
+  "permissions": ["scripting", "activeTab", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.lets-role.com/*"],
+      "js": [
+        "js/messageReceiver.js",
+        "js/messageSender.js",
+        "js/main.js",
+        "js/variables.js",
+        "js/settingVariables.js",
+        "js/leftColumn.js",
+        "js/rolls.js",
+        "js/player1.js",
+        "js/player2.js",
+        "js/player3.js",
+        "js/player4.js",
+        "js/playerSection.js",
+        "js/weightHandler.js",
+        "js/inventoryHandler.js"
+
+
+      ],
+      "css": ["css/main.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
