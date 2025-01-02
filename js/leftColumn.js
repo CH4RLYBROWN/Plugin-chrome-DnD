@@ -17,6 +17,7 @@ function creationLeftColumn(timbre) {
   playerButton.firstElementChild.style.width = "100%";
   playerButton.addEventListener("click", () => {
     openProfileSheet();
+    
   });
 
   
