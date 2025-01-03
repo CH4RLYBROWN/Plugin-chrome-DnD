@@ -21,7 +21,9 @@
         "js/player4.js",
         "js/playerSection.js",
         "js/weightHandler.js",
-        "js/inventoryHandler.js",
+        "js/inventory/inventoryHandler.js",
+        "js/inventory/inventoryOpeningHandler.js",
+        "js/inventory/updateItems.js",
         "js/inputEventsHandler.js"
 
 
