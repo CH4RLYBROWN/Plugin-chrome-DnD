@@ -179,16 +179,13 @@ function applyItemUpdate(index) {
   poids.value = weight.value;
   itemDescription.value = description.value;
 
-  // ✅ Déclencher un événement 'input' et 'change' pour forcer la mise à jour de l'UI
-  itemName.dispatchEvent(new Event('change', { bubbles: true }));
+  // Déclencher un événement 'input' et 'change' pour forcer la mise à jour de l'UI
+  inputChangeEvent(itemName);
+  inputChangeEvent(quantite);
+  inputChangeEvent(poids);
+  inputChangeEvent(itemDescription);
 
-  quantite.dispatchEvent(new Event('change', { bubbles: true }));
-
-  poids.dispatchEvent(new Event('change', { bubbles: true }));
-
-  itemDescription.dispatchEvent(new Event('change', { bubbles: true }));
-
-  // ✅ Simuler le clic sur le bouton de sauvegarde
+  // Simuler le clic sur le bouton de sauvegarde
   const itemCtn = document.querySelector(`[data-row-id="${rowId}"]`);
   const itemCtnCld = itemCtn.children[1].firstElementChild;
   const doneBtn = itemCtnCld.children[1]; // Assure-toi que c'est bien le bon bouton

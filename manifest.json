@@ -21,7 +21,8 @@
         "js/player4.js",
         "js/playerSection.js",
         "js/weightHandler.js",
-        "js/inventoryHandler.js"
+        "js/inventoryHandler.js",
+        "js/inputEventsHandler.js"
 
 
       ],
