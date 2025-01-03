@@ -10,7 +10,7 @@ function manageInventory() {
   updateInvBtn.classList.add("inventory-btn", "update-inventory");
   updateInvBtn.textContent = "Update";
   gridButtons.appendChild(updateInvBtn);
-  addItemBtn = document.createElement("button");
+  const addItemBtn = document.createElement("button");
   addItemBtn.classList.add("inventory-btn", "add-item-inventory");
   addItemBtn.textContent = "Ajouter";
   gridButtons.appendChild(addItemBtn);
@@ -162,76 +162,37 @@ function setupUpdateUI(targetedParentDiv) {
 }
 
 function applyItemUpdate(index) {
-  rowId = rowIds[index];
-  console.log(rowId);
-
-  const itemName = document.querySelector(
-    `[data-widget-id="items.${rowId}.itemName"]`
-  );
-  const quantite = document.querySelector(
-    `[data-widget-id="items.${rowId}.quantite"]`
-  );
-  const poids = document.querySelector(
-    `[data-widget-id="items.${rowId}.taztjoqz"]`
-  );
-  const itemDescription = document.querySelector(
-    `[data-widget-id="items.${rowId}.itemDescription"]`
-  );
-  const itemEquipped = document.querySelector(
-    `[data-widget-id="items.${rowId}.itemEquipped"]`
-  );
+  const rowId = rowIds[index];
+  const itemName = document.querySelector(`[data-widget-id="items.${rowId}.itemName"]`);
+  const quantite = document.querySelector(`[data-widget-id="items.${rowId}.quantite"]`);
+  const poids = document.querySelector(`[data-widget-id="items.${rowId}.taztjoqz"]`);
+  const itemDescription = document.querySelector(`[data-widget-id="items.${rowId}.itemDescription"]`);
 
   const title = document.querySelector(".update-invt-title");
   const quantity = document.querySelector("#inputInvtQuantity");
   const weight = document.querySelector("#inputInvtWeight");
   const description = document.querySelector(".update-invt-description");
 
+  // Met à jour les valeurs dans l'interface
   itemName.value = title.value;
   quantite.value = quantity.value;
   poids.value = weight.value;
-  console.log(itemName.value, title.value);
+  itemDescription.value = description.value;
 
+  // ✅ Déclencher un événement 'input' et 'change' pour forcer la mise à jour de l'UI
+  itemName.dispatchEvent(new Event('change', { bubbles: true }));
 
+  quantite.dispatchEvent(new Event('change', { bubbles: true }));
+
+  poids.dispatchEvent(new Event('change', { bubbles: true }));
+
+  itemDescription.dispatchEvent(new Event('change', { bubbles: true }));
+
+  // ✅ Simuler le clic sur le bouton de sauvegarde
   const itemCtn = document.querySelector(`[data-row-id="${rowId}"]`);
   const itemCtnCld = itemCtn.children[1].firstElementChild;
-  const doneBtn = itemCtnCld.children[1];
-  //setTimeout( clicking, 3000, doneBtn);  
-
-  const getValue = document.querySelector(
-    ".inventory-btn.add-item-inventory"
-  );
-  getValue.addEventListener('click', () => {
-    console.log("VOICI LA VALEUR VALUE :", itemName.value)
-  })
-
-  // Ajouter un écouteur d'événement pour le clic
-  doneBtn.addEventListener("click", () => {
-      alert("Bouton cliqué ! Valeur actuelle : " + itemName.value);
-  });
-
-  // Simuler une saisie dans le champ de texte
-  itemName.value = "Bonjour, monde!";
-  const inputEvent = new InputEvent("input", {
-      bubbles: true,
-      data: "Bonjour, monde!",
-      inputType: "insertText"
-  });
-  itemName.dispatchEvent(inputEvent);
-
-  // Simuler un clic sur le bouton
-  const clickEvent = new MouseEvent("click", {
-      bubbles: true,
-      cancelable: true,
-  });
-    doneBtn.addEventListener("click", (event) => {
-      console.log("Default prevented?", event.defaultPrevented);
-      if (event.defaultPrevented) {
-          event.preventDefault(); // Désactive le comportement par défaut
-      }
-  });
-
-
-
+  const doneBtn = itemCtnCld.children[1]; // Assure-toi que c'est bien le bon bouton
+  doneBtn.click();
 }
 
 function clicking (element) {
